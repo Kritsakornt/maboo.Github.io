@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Valentine</title>
+</head>
+<body>
+
+    <!-- หน้าโหลด -->
+    <div id="heart-loading-screen" class="heart-loading-screen">
+        <div class="heart-loading"></div>
+    </div>
+
+    <div class="safe-container">
+        <div class="screen" id="screen">- - - - - -</div>
+        <div class="keypad">
+            <button onclick="pressKey(1)">1</button>
+            <button onclick="pressKey(2)">2</button>
+            <button onclick="pressKey(3)">3</button>
+            <button onclick="pressKey(4)">4</button>
+            <button onclick="pressKey(5)">5</button>
+            <button onclick="pressKey(6)">6</button>
+            <button onclick="pressKey(7)">7</button>
+            <button onclick="pressKey(8)">8</button>
+            <button onclick="pressKey(9)">9</button>
+            <button onclick="clearCode()">C</button>
+            <button onclick="pressKey(0)">0</button>
+            <button onclick="checkCode()">✓</button>
+        </div>
+        <div class="open-message" id="openMes sage">SAFEOPEN!</div>
+    </div>
+    
+    <script>
+        let code = "";
+        const correctCode = "101025";
+        function pressKey(num) {
+            if (code.length < 6) {
+                code += num;
+                updateScreen();
+            }
+        }
+        function clearCode() {
+            code = "";
+            updateScreen();
+        }
+        function updateScreen() {
+            document.getElementById("screen").textContent = code.padEnd(6, "-").split("").join(" ");
+        }
+        // function checkCode() {
+        //     if (code === correctCode) {
+        //         window.location.href = "home.html";
+        //     } else {
+        //         alert("Incorrect Code!");
+        //         clearCode();
+        //     }
+        // }
+        function checkCode() {
+        if (code === correctCode) {
+            // แสดงหน้าโหลด
+            document.getElementById("heart-loading-screen").style.display = "flex";
+            
+            // รอ 2 วินาที (ให้แอนิเมชันหัวใจเล่นก่อนเปลี่ยนหน้า)
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 2000);
+        } else {
+            alert("Incorrect Code!");
+            clearCode();
+        }
+    }
+    </script>
+</body>
+</html>

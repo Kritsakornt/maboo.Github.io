@@ -1,0 +1,218 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffccd5;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+.safe-container {
+    background: #444;
+    border-radius: 15px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.screen {
+    background: #222;
+    color: #FF968A;
+    font-size: 24px;
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #FF968A;
+}
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.keypad button {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    background: #666;
+    border: none;
+    color: #FFC8A2;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+.keypad button:hover {
+    background: #888;
+}
+.open-message {
+    display: none;
+    color: #0f0;
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+}
+
+/* TIME Ani */
+h1 {
+    font-size: 32px;
+    /* margin-bottom: 20px; */
+}
+.countdown-container {
+    display: flex;
+    gap: 20px;
+}
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.countdown-value {
+    font-size: 80px;
+    font-weight: bold;
+}
+.countdown-label {
+    font-size: 20px;
+}
+.divider {
+    width: 2px;
+    background-color: #000;
+    height: 100px;
+}
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    overflow: hidden;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slide {
+    display: none;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+:root {
+    --main-color: #ff5678;
+    --secondary-color: #ff304f;
+    --heart-size: 20px;
+  }
+  body {
+    background: #ffccd5;
+    font-family: "Comic Sans MS", sans-serif;
+    color: var(--main-color);
+    text-align: center;
+    /* padding: 20px; */
+    overflow: hidden; /* Prevent horizontal scroll */
+  }
+  h1 {
+    /* margin-top: 50px; */
+  }
+  #message {
+    font-size: 2em;
+    margin-top: 20px;
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Fade in  using javascript*/
+  }
+  
+  
+  .heart {
+    position: absolute;
+    width: var(--heart-size);
+    height: var(--heart-size);
+    background: red;
+    transform: rotate(45deg);
+    animation: fall 2.5s linear infinite;
+  }
+  .heart:before,
+  .heart:after {
+    content: "";
+    position: absolute;
+    width: var(--heart-size);
+    height: var(--heart-size);
+  
+    background: red;
+    border-radius: 50%;
+  }
+  .heart:before {
+    top: calc(-1 * var(--heart-size) / 2);
+    left: 0;
+  }
+  .heart:after {
+    top: 0;
+    left: calc(-1 * var(--heart-size) / 2);
+  }
+  @keyframes fall {
+    0% {
+      top: -50px;
+      opacity: 1;
+    }
+    100% {
+      top: 100vh;
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+  }
+
+/* หน้าโหลด */
+.heart-loading-screen {
+  display: none; /* ซ่อนก่อน */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffccd5;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* หัวใจที่เต้น */
+.heart-loading {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(to bottom, #ff4d6d, #ff8fab);
+  transform: rotate(-45deg);
+  animation: heartbeat 1s infinite;
+}
+
+.heart-loading:before,
+.heart-loading:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(to bottom, #ff4d6d, #ff8fab);
+  border-radius: 50%;
+}
+
+.heart-loading:before {
+  top: -50px;
+  left: 0;
+}
+
+.heart-loading:after {
+  left: 50px;
+  top: 0;
+}
+
+/* แอนิเมชันหัวใจเต้น */
+@keyframes heartbeat {
+  0% { transform: scale(1) rotate(-45deg); }
+  50% { transform: scale(1.2) rotate(-45deg); }
+  100% { transform: scale(1) rotate(-45deg); }
+}

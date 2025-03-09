@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Anniversary</title>
+</head>
+<body>
+    <!-- เครื่องเล่นเพลง -->
+    <div class="music-container">
+        <div class="record"></div>
+    </div>
+    <h1>Anniversary ❤️</h1>
+    <div class="countdown-container">
+        <div class="countdown-box">
+            <div class="countdown-value" id="years">00</div>
+            <div class="countdown-label">Years</div>
+        </div>
+        <div class="divider"></div>
+        <div class="countdown-box">
+            <div class="countdown-value" id="months">00</div>
+            <div class="countdown-label">Months</div>
+        </div>
+        <div class="divider"></div>
+        <div class="countdown-box">
+            <div class="countdown-value" id="days">00</div>
+            <div class="countdown-label">Days</div>
+        </div>
+        <div class="divider"></div>
+        <div class="countdown-box">
+            <div class="countdown-value" id="hours">00</div>
+            <div class="countdown-label">Hours</div>
+        </div>
+        <div class="divider"></div>
+        <div class="countdown-box">
+            <div class="countdown-value" id="minutes">00</div>
+            <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="divider"></div>
+        <div class="countdown-box">
+            <div class="countdown-value" id="seconds">00</div>
+            <div class="countdown-label">Seconds</div>
+        </div>
+    </div>
+    
+    <div class="slideshow-container" id="slideshow-container"></div>
+
+    <div id="message"></div>
+
+    <!-- เครื่องเล่นเพลงแบบซ่อน -->
+    <audio id="audio" src="song/GreenTeaAndHoney.mp4" autoplay loop></audio>
+
+    <script src="index.js"></script>
+</body>
+</html>
