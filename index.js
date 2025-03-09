@@ -18,7 +18,6 @@ function sendLove() {
     message.innerHTML = `You're loved, ${name}! ❤️`;
     message.style.opacity = 1;
 
-    // Create confetti effect
     for (let i = 0; i < 5000; i++) {
         setTimeout(createHeart, i * 100);
     }
