@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <title>Love you my boo</title>
+    <style>
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Dancing Script', cursive;
+            position: relative;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .drop {
+            position: absolute;
+            top: -50px;
+            font-size: 5vw;
+            color: #ffcce6;
+            text-shadow: 0 0 10px #ff99cc, 0 0 20px #ffffff;
+            opacity: 1;
+            animation: fall 6s ease-in forwards;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0); opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        img.drop {
+            width: 15vw;
+            max-width: 80px;
+            z-index: 1;
+            pointer-events: none;
+            border-radius: 10px;
+        }
+
+        div.drop {
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .drop {
+                font-size: 3vw;
+            }
+
+            img.drop {
+                width: 15vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="bgMusic" src="/song/ityou.mp4" loop autoplay muted></audio>
+
+    <script>
+        const audio = document.getElementById('bgMusic'); // ✅ เพิ่มบรรทัดนี้
+
+        document.addEventListener('click', function () {
+            audio.muted = false;
+            audio.play().catch(e => {
+                console.log("Autoplay failed:", e);
+            });
+        }, { once: true });
+
+        const characters = [
+            'รัก', '♥', 'คิดถึง', '😊',
+            'รักบิวที่สุดเลยย ♥', 'มีบิวมันดีมากๆ',
+            'โบ๊ทรักบิวมากๆ', 'โบ๊ทรักบิวที่สุดในโลก',
+            'การที่มีที่รักมันดีกว่าเสมอ', "You're the one i need, Love you my baby",
+            'picked these flowers just like', 'i picked you - carefully',
+            'lovingly, and with great taste 😘', 'ขอบคุณที่อยู่ด้วยกันนะครับ',
+            'ยิ้มเยอะๆ', 'สดใสเข้าใว้นะคะคนเก่ง', 'ขอบคุณที่อยู่ด้วยกันนะคะ',
+            'ที่รักคือของขวัญที่ดีที่สุดของเค้า', 'อยู่เป็นรอยยิ้มให้กันไปนานๆนะคะ',
+            'รักที่สุดเลยนะรู้ป่าว', 'ร้อยคนทักไม่รักเท่าบิว', 'มาอยู่ด้วยกันจนโลกเเตกเลยนะ',
+            'LOVE YOU MY BOO', 'LOVE', 'love', '❤️', '💖', '💗', '💘', '💝', '💞', '💕', '💓', '💟'
+        ];
+
+        const images = [
+            "CLQE5686.JPG", "CLQE5686.png", "IMG_2337.JPG", "IMG_2337.png", 
+            "IMG_2341.JPG", "IMG_2341.png", "IMG_2346.JPG", "IMG_2348.JPG", 
+            "IMG_2412.JPG", "IMG_2422.JPG", "IMG_2429.JPG", "IMG_2444.JPG",
+            "IMG_2451.JPG", "IMG_2462.JPG", "IMG_2463.JPG", "IMG_2464.JPG",
+            "IMG_2466.JPG", "IMG_2467.JPG", "IMG_2468.JPG", "IMG_2473.JPG",
+            "IMG_2481.JPG", "IMG_2489.JPG", "IMG_2494.JPG", "IMG_2499.JPG",
+            "IMG_2500.JPG", "IMG_2502.JPG", "IMG_2504.JPG", "IMG_2519.JPG",
+            "IMG_2527.jpg", "IMG_2528.jpg", "IMG_2536.jpg", "IMG_2537.jpg",
+            "IMG_2547.jpg", "IMG_2548.PNG", "IMG_2561.jpg", "IMG_2565.jpg",
+            "IMG_2572.jpg", "IMG_2603.jpg", "IMG_2616.jpg", "IMG_2618.jpg",
+            "IMG_2646.jpg", "IMG_2663.jpg", "IMG_2664.jpg", "IMG_2690.jpg",
+            "IMG_2707.jpg", "IMG_2712.jpg", "IMG_2717.jpg", "IMG_2724.jpg",
+            "IMG_2734.jpg", "IMG_2747.jpg", "IMG_2748.jpg", "IMG_2761.jpg",
+            "IMG_2763.jpg", "IMG_2794.JPG", "IMG_2796.JPG", "IMG_2797.JPG",
+            "IMG_2815.JPG", "IMG_2816.JPG", "IMG_2817.JPG", "IMG_2818.JPG",
+            "IMG_2921.jpg", "IMG_2923.jpg", "IMG_2929.jpg", "IMG_2980.JPG",
+            "IMG_2981.JPG", "IMG_2982.JPG", "IMG_2985.JPG", "IMG_3159.jpg",
+            "IMG_3169.jpg", "IMG_3177.jpg", "IMG_3185.jpg", "IMG_3271.jpg",
+            "IMG_3273.jpg", "IMG_3276.jpg", "IMG_3287.PNG", "IMG_3293.PNG",
+            "IMG_3307.jpg", "IMG_3308.jpg", "IMG_3311.jpg", "IMG_3331.jpg",
+            "IMG_3332.jpg", "IMG_3489.jpg", "IMG_3503.jpg", "IMG_3507.jpg",
+            "IMG_3929.jpg", "IMG_3989.JPG", "IMG_3992.PNG", "IMG_3994.PNG",
+            "IMG_3995.PNG", "JPNK5955.JPG", "LXMG2657.JPG", "TQXZ7956.JPG"
+        ];
+
+        const recentImages = [];
+        const maxRecentImages = 5;
+
+        function getUniqueImage() {
+            const availableImages = images.filter(img => !recentImages.includes(img));
+            if (availableImages.length === 0) {
+                recentImages.length = 0;
+                return images[Math.floor(Math.random() * images.length)];
+            }
+            const chosen = availableImages[Math.floor(Math.random() * availableImages.length)];
+            recentImages.push(chosen);
+            if (recentImages.length > maxRecentImages) recentImages.shift();
+            return chosen;
+        }
+
+        function createDrop() {
+            for (let i = 0; i < 1; i++) {
+                const isImage = Math.random() < 0.3;
+                const left = Math.random() * 100 + '%'; // เหลือที่ไว้ด้านข้าง
+                const top = '-50px';
+
+                if (isImage) {
+                    const img = new Image();
+                    img.src = '/img/' + getUniqueImage();
+                    img.classList.add('drop');
+                    img.style.left = left;
+                    img.style.top = top;
+                    document.body.appendChild(img);
+                    setTimeout(() => img.remove(), 6000);
+                } else {
+                    const text = document.createElement('div');
+                    text.classList.add('drop');
+                    text.textContent = characters[Math.floor(Math.random() * characters.length)];
+                    text.style.left = left;
+                    text.style.top = top;
+                    document.body.appendChild(text);
+                    setTimeout(() => text.remove(), 6000);
+                }
+            }
+        }
+
+        function createStars(count = 120) {
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * window.innerWidth + 'px';
+                star.style.top = Math.random() * window.innerHeight + 'px';
+                star.style.animationDuration = (1 + Math.random() * 2) + 's';
+                star.style.opacity = Math.random();
+                document.body.appendChild(star);
+            }
+        }
+
+        createStars(120);
+        setInterval(createDrop, 360);
+    </script>
+</body>
+</html>
