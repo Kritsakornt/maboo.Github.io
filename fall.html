@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,8 +32,15 @@
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         .drop {
@@ -48,9 +56,19 @@
         }
 
         @keyframes fall {
-            0% { transform: translateY(0); opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(100vh); opacity: 0; }
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
         }
 
         img.drop {
@@ -104,29 +122,95 @@
         ];
 
         const images = [
-            "CLQE5686.JPG", "CLQE5686.png", "IMG_2337.JPG", "IMG_2337.png", 
-            "IMG_2341.JPG", "IMG_2341.png", "IMG_2346.JPG", "IMG_2348.JPG", 
-            "IMG_2412.JPG", "IMG_2422.JPG", "IMG_2429.JPG", "IMG_2444.JPG",
-            "IMG_2451.JPG", "IMG_2462.JPG", "IMG_2463.JPG", "IMG_2464.JPG",
-            "IMG_2466.JPG", "IMG_2467.JPG", "IMG_2468.JPG", "IMG_2473.JPG",
-            "IMG_2481.JPG", "IMG_2489.JPG", "IMG_2494.JPG", "IMG_2499.JPG",
-            "IMG_2500.JPG", "IMG_2502.JPG", "IMG_2504.JPG", "IMG_2519.JPG",
-            "IMG_2527.jpg", "IMG_2528.jpg", "IMG_2536.jpg", "IMG_2537.jpg",
-            "IMG_2547.jpg", "IMG_2548.PNG", "IMG_2561.jpg", "IMG_2565.jpg",
-            "IMG_2572.jpg", "IMG_2603.jpg", "IMG_2616.jpg", "IMG_2618.jpg",
-            "IMG_2646.jpg", "IMG_2663.jpg", "IMG_2664.jpg", "IMG_2690.jpg",
-            "IMG_2707.jpg", "IMG_2712.jpg", "IMG_2717.jpg", "IMG_2724.jpg",
-            "IMG_2734.jpg", "IMG_2747.jpg", "IMG_2748.jpg", "IMG_2761.jpg",
-            "IMG_2763.jpg", "IMG_2794.JPG", "IMG_2796.JPG", "IMG_2797.JPG",
-            "IMG_2815.JPG", "IMG_2816.JPG", "IMG_2817.JPG", "IMG_2818.JPG",
-            "IMG_2921.jpg", "IMG_2923.jpg", "IMG_2929.jpg", "IMG_2980.JPG",
-            "IMG_2981.JPG", "IMG_2982.JPG", "IMG_2985.JPG", "IMG_3159.jpg",
-            "IMG_3169.jpg", "IMG_3177.jpg", "IMG_3185.jpg", "IMG_3271.jpg",
-            "IMG_3273.jpg", "IMG_3276.jpg", "IMG_3287.PNG", "IMG_3293.PNG",
-            "IMG_3307.jpg", "IMG_3308.jpg", "IMG_3311.jpg", "IMG_3331.jpg",
-            "IMG_3332.jpg", "IMG_3489.jpg", "IMG_3503.jpg", "IMG_3507.jpg",
-            "IMG_3929.jpg", "IMG_3989.JPG", "IMG_3992.PNG", "IMG_3994.PNG",
-            "IMG_3995.PNG", "JPNK5955.JPG", "LXMG2657.JPG", "TQXZ7956.JPG"
+            "CLQE5686.png",
+            "IMG_2337.png",
+            "IMG_2341.png",
+            "IMG_2346.png",
+            "IMG_2348.png",
+            "IMG_2412.png",
+            "IMG_2422.png",
+            "IMG_2429.png",
+            "IMG_2444.png",
+            "IMG_2451.png",
+            "IMG_2462.png",
+            "IMG_2463.png",
+            "IMG_2464.png",
+            "IMG_2466.png",
+            "IMG_2467.png",
+            "IMG_2468.png",
+            "IMG_2473.png",
+            "IMG_2481.png",
+            "IMG_2489.png",
+            "IMG_2494.png",
+            "IMG_2499.png",
+            "IMG_2500.png",
+            "IMG_2502.png",
+            "IMG_2504.png",
+            "IMG_2519.png",
+            "IMG_2527.png",
+            "IMG_2528.png",
+            "IMG_2536.png",
+            "IMG_2537.png",
+            "IMG_2547.png",
+            "IMG_2548.PNG",
+            "IMG_2561.png",
+            "IMG_2565.png",
+            "IMG_2572.png",
+            "IMG_2603.png",
+            "IMG_2616.png",
+            "IMG_2618.png",
+            "IMG_2646.png",
+            "IMG_2663.png",
+            "IMG_2664.png",
+            "IMG_2690.png",
+            "IMG_2707.png",
+            "IMG_2712.png",
+            "IMG_2717.png",
+            "IMG_2724.png",
+            "IMG_2734.png",
+            "IMG_2747.png",
+            "IMG_2748.png",
+            "IMG_2761.png",
+            "IMG_2763.png",
+            "IMG_2794.png",
+            "IMG_2796.png",
+            "IMG_2797.png",
+            "IMG_2815.png",
+            "IMG_2816.png",
+            "IMG_2817.png",
+            "IMG_2818.png",
+            "IMG_2921.png",
+            "IMG_2923.png",
+            "IMG_2929.png",
+            "IMG_2980.png",
+            "IMG_2981.png",
+            "IMG_2982.png",
+            "IMG_2985.png",
+            "IMG_3159.png",
+            "IMG_3169.png",
+            "IMG_3177.png",
+            "IMG_3185.png",
+            "IMG_3271.png",
+            "IMG_3273.png",
+            "IMG_3276.png",
+            "IMG_3287.PNG",
+            "IMG_3293.PNG",
+            "IMG_3307.png",
+            "IMG_3308.png",
+            "IMG_3311.png",
+            "IMG_3331.png",
+            "IMG_3332.png",
+            "IMG_3489.png",
+            "IMG_3503.png",
+            "IMG_3507.png",
+            "IMG_3929.png",
+            "IMG_3989.png",
+            "IMG_3992.PNG",
+            "IMG_3994.PNG",
+            "IMG_3995.PNG",
+            "JPNK5955.png",
+            "LXMG2657.png",
+            "TQXZ7956.png",
         ];
 
         const recentImages = [];
@@ -186,4 +270,5 @@
         setInterval(createDrop, 360);
     </script>
 </body>
+
 </html>
